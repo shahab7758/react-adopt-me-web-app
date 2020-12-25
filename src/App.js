@@ -36,6 +36,7 @@ constructor(props){
     return (
       <div>
         <h1>Adopt</h1>
+        {console.log(this.state.pets)}
         {
           this.state.pets.map(pet =>{
             let breed;
@@ -50,6 +51,8 @@ constructor(props){
             animal={pet.animal}
             name={pet.name}
             breed={breed}
+            media={pet.media}
+            location={`${pet.contact.city}, ${pet.contact.state}`}
             />
           })
         }
