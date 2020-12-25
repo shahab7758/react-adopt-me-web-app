@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { Component } from 'react';
 class Details extends Component {
     state = {  }
     render() { 
