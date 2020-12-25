@@ -46,9 +46,10 @@ constructor(props){
               breed=pet.breeds.breed
             }
           return  <Pet 
+            key={pet.id}
             animal={pet.animal}
             name={pet.name}
-            breed={pet.breed}
+            breed={breed}
             />
           })
         }
