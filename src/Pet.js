@@ -1,15 +1,16 @@
+import { Link } from '@reach/router';
 import React, { Component } from 'react';
 
 class Pet extends Component {
     state = {  }
     render() { 
-        const {animal, name, breed, media, location} = this.props
+        const {animal, name, breed, media, location, id} = this.props
         let photos=[]
         if(media && media.photos && media.photos.photo){
             photos=media.photos.photo.filter(photo => photo['@size']==='pn')
         }
         return ( 
-            <div className='pet'>
+            <Link to={`/details/${id}`} className='pet'>
                 <div className='image-container'>
                     <img src={photos[0].value} />
                 </div>
@@ -19,7 +20,7 @@ class Pet extends Component {
                         {animal} - {breed} - {location}
                     </h2>
                 </div>
-            </div>
+            </Link>
          );
     }
 }
